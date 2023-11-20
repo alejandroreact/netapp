@@ -8,7 +8,6 @@ function App() {
       <header className="App__header">
         <h1>Social Net App</h1>
       </header>
-      return (
       <body className="App__body">
         <UsersList>
 

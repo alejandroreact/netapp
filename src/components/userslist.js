@@ -1,13 +1,12 @@
 import React, {useState} from 'react'
 
-
-const [users, setUsers] = useState ([])
-
 function UsersList(props) {
+
+    const [users, setUsers] = useState ([])
 
     return (
         <div className="App__users-list">
-
+            <p>Userslist</p>
         </div>
     )
 
