@@ -8,14 +8,14 @@ function App() {
       <header className="App__header">
         <h1>Social Net App</h1>
       </header>
-      <body className="App__body">
+      <div className="App__body">
         <UsersList>
 
         </UsersList>
         <UserDetail>
 
         </UserDetail>
-      </body>  
+      </div>  
       <footer className="App__footer">
         <p>Social Net App {new Date().getFullYear()}</p>
       </footer>
