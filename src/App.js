@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import UsersList from './components/userslist'
+import UserDetail from './components/userdetail'
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App__header">
+        <h1>Social Net App</h1>
       </header>
+      return (
+      <body className="App__body">
+        <UsersList>
+
+        </UsersList>
+        <UserDetail>
+
+        </UserDetail>
+      </body>  
+      <footer className="App__footer">
+        <p>Social Net App {new Date().getFullYear()}</p>
+      </footer>
     </div>
   );
 }
