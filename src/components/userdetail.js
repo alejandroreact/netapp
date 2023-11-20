@@ -5,8 +5,7 @@ function UserDetail(props) {
 
     return (
         <div className="App__user-detail">
-            <h2>User Detail: {props.user.user}</h2>
-
+            <h2>User Detail: {props.user.username} - {props.user.name}</h2>
             <AlbumList>
 
             </AlbumList>

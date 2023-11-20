@@ -6,14 +6,14 @@ import UserDetail from "./userdetail"
 function UsersList(props) {
 
     const [users, setUsers] = useState ([])
-    const [showID, setShowID] = useState (0)
+    const [showIndex, setShowIndex] = useState (-1)
     
-    function handleClick(id){
-        console.log (props.id)
-        if (showID===id){
-            setShowID(0)
+    function handleClick(index){
+        console.log (index)
+        if (showIndex===index){
+            setShowIndex(-1)
         } else{
-            setShowID(id)
+            setShowIndex(index)
         }
     }
 
@@ -49,12 +49,12 @@ function UsersList(props) {
     return (
         <div className="App__users-list">
             <h2>Users list</h2>
-            {Array.isArray(users) && users.map((userValue) => {
+            {Array.isArray(users) && users.map((userValue, index) => {
                 return (
-                    <UserItem key={userValue.id} user={userValue} onClick={() => handleClick(userValue.id)} />
+                    <UserItem key={userValue.id} user={userValue} onClick={() => handleClick(index)} />
                 )
             })}
-            {(showID>0) && <UserDetail user={users[showID]}/>}
+            {(showIndex>-1) && <UserDetail user={users[showIndex]}/>}
         </div>
     )
 
