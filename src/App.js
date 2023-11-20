@@ -1,5 +1,4 @@
 import UsersList from './components/userslist'
-import UserDetail from './components/userdetail'
 
 function App() {
 
@@ -9,12 +8,7 @@ function App() {
         <h1>Social Net App</h1>
       </header>
       <div className="App__body">
-        <UsersList>
-
-        </UsersList>
-        <UserDetail>
-
-        </UserDetail>
+        <UsersList />
       </div>  
       <footer className="App__footer">
         <p>Social Net App {new Date().getFullYear()}</p>

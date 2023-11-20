@@ -1,8 +1,21 @@
 import React, {useState, useEffect} from 'react'
+import UserItem from "./useritem"
+import UserDetail from "./userdetail"
+
 
 function UsersList(props) {
 
     const [users, setUsers] = useState ([])
+    const [showID, setShowID] = useState (0)
+    
+    function handleClick(id){
+        console.log (props.id)
+        if (showID===id){
+            setShowID(0)
+        } else{
+            setShowID(id)
+        }
+    }
 
     async function loadData (controller) {
         const fullApiUrl = "https://jsonplaceholder.typicode.com/users/"
@@ -36,14 +49,12 @@ function UsersList(props) {
     return (
         <div className="App__users-list">
             <h2>Users list</h2>
-
             {Array.isArray(users) && users.map((userValue) => {
                 return (
-                    <div key={userValue.id}>
-                        <p>{userValue.username} - {userValue.name}</p>
-                    </div>
+                    <UserItem key={userValue.id} user={userValue} onClick={() => handleClick(userValue.id)} />
                 )
             })}
+            {(showID>0) && <UserDetail user={users[showID]}/>}
         </div>
     )
 
