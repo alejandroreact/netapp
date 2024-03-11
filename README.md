@@ -1,4 +1,4 @@
-# netApp - Social net
+# netApp - Social net (React - Typescript)
 
 ## Getting Started with Create React App
 
